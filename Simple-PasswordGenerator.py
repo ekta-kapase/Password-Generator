@@ -10,14 +10,13 @@ ip_letters= int(input("How many letters would you like in your password?\n"))
 ip_symbols = int(input(f"How many symbols would you like?\n"))
 ip_numbers = int(input(f"How many numbers would you like?\n"))
 
+r_letters = random.sample(letters, ip_letters)
 
-r_letters = random.choices(letters,weights=None, cum_weights=None, k = ip_letters)
-r_letters = ''.join(r_letters)
+r_symbols = random.sample(symbols, ip_symbols)
 
-r_symbols = random.choices(symbols,weights=None, cum_weights=None, k = ip_symbols)
-r_symbols = ''.join(r_symbols)
+r_numbers = random.sample(numbers, ip_numbers)
 
-r_numbers = random.choices(numbers,weights=None, cum_weights=None, k = ip_numbers)
-r_numbers = ''.join(r_numbers)
+r_pass = r_letters + r_symbols + r_numbers
+r_pass = ''.join(r_pass)
 
-print(f"{r_letters}{r_symbols}{r_numbers}")
+print(f"Your password is {r_pass}")
